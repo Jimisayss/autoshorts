@@ -28,8 +28,9 @@
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
+      "js": ["dist/content.bundle.js"],
+      "run_at": "document_idle",
+      "all_frames": true
     }
   ]
 }

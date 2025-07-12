@@ -2,7 +2,8 @@
 
 const STORAGE_KEY = {
   COUNT: "shortsWatchedCount",
-  TIME: "totalTimeWatched"
+  TIME: "totalTimeWatched",
+  MANUAL_SKIP: "manuallySkippedCount"
 };
 
 function formatTime(ms) {
@@ -18,24 +19,40 @@ function formatTime(ms) {
   return str.trim();
 }
 
-function updateStatsUI(count, timeMs) {
+function updateStatsUI(count, timeMs, manualSkipped) {
   document.getElementById("shorts-count").textContent = count;
   document.getElementById("time-watched").textContent = formatTime(timeMs);
+  document.getElementById("manual-skipped-count").textContent = manualSkipped;
 }
 
 function loadStats() {
-  chrome.storage.sync.get([STORAGE_KEY.COUNT, STORAGE_KEY.TIME], (data) => {
-    const count = Number(data[STORAGE_KEY.COUNT]) || 0;
-    const time = Number(data[STORAGE_KEY.TIME]) || 0;
-    updateStatsUI(count, time);
-  });
+  if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.local) {
+    chrome.storage.local.get([STORAGE_KEY.COUNT, STORAGE_KEY.TIME, STORAGE_KEY.MANUAL_SKIP], (data) => {
+      const count = Number(data[STORAGE_KEY.COUNT]) || 0;
+      const time = Number(data[STORAGE_KEY.TIME]) || 0;
+      const manualSkipped = Number(data[STORAGE_KEY.MANUAL_SKIP]) || 0;
+      updateStatsUI(count, time, manualSkipped);
+    });
+  } else {
+    // Fallback for local testing
+    const count = 0;
+    const time = 0;
+    const manualSkipped = 0;
+    updateStatsUI(count, time, manualSkipped);
+  }
 }
 
 function resetStats() {
-  chrome.storage.sync.set({
-    [STORAGE_KEY.COUNT]: 0,
-    [STORAGE_KEY.TIME]: 0
-  }, loadStats);
+  if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.local) {
+    chrome.storage.local.set({
+      [STORAGE_KEY.COUNT]: 0,
+      [STORAGE_KEY.TIME]: 0,
+      [STORAGE_KEY.MANUAL_SKIP]: 0
+    }, loadStats);
+  } else {
+    // Fallback for local testing
+    updateStatsUI(0, 0, 0);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -46,4 +63,5 @@ document.addEventListener("DOMContentLoaded", () => {
       resetStats();
     }
   });
+
 });

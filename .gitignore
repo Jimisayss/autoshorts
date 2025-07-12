@@ -1,0 +1,23 @@
+# Ignore dependencies and build artifacts
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+.idea/
+.vscode/
+npm-debug.log
+yarn-error.log
+yarn.lock
+pnpm-lock.yaml
+Thumbs.db
+*.swp
+*.swo
+
+# Ignore BrowserTools extension artifacts
+BrowserTools-1.2.0-extension.zip
+BrowserTools-Extension/
+BrowserTools-Extension/__MACOSX/
+BrowserTools-Extension/chrome-extension/
+
+# Do NOT ignore any project source files

@@ -64,6 +64,13 @@ No pressure. But support like yours helps me keep building weird, useful, human-
 
 ---
 
+## 🐞 Known Issues
+
+- **Multi-monitor support is inconsistent:** AutoShorts may not always work as expected when Chrome is moved between monitors with different scaling or DPI settings.
+- **YouTube tab focus required:** The extension only works reliably when the YouTube Shorts tab is focused. If the tab is not active, auto-skip and stats tracking may not function.
+
+---
+
 ## 🤝 Contributing
 
 Pull requests and suggestions are welcome! For major changes, please open an issue first to discuss what you would like to change.
