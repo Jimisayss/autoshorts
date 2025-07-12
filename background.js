@@ -5,7 +5,7 @@ chrome.alarms.create('checkShorts', { periodInMinutes: 0.1 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === 'checkShorts') {
-    chrome.tabs.query({ url: "*://*.youtube.com/shorts/*" }, (tabs) => {
+    chrome.tabs.query({ url: "*://*.youtube.com/*" }, (tabs) => {
       for (const tab of tabs) {
         chrome.tabs.sendMessage(tab.id, { action: "autoShortsCheck" });
       }
