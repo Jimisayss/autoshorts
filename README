@@ -1,0 +1,65 @@
+# AutoShorts 🐾🎬
+
+**Hands-free YouTube Shorts. Built because my dogs pin me down — and I love it.**
+
+## 🧠 What is AutoShorts?
+
+AutoShorts is a Chrome extension that **automatically skips to the next YouTube Short** as soon as the current one finishes, while **tracking how many you’ve watched** and **how much time you’ve spent** watching.
+
+It was built out of necessity:  
+> My dogs love to chill on my lap while I’m at my desk.  
+> That means I can’t scroll with a mouse or tap the keyboard.  
+> So I made something that scrolls for me. And now — maybe for you too.
+
+---
+
+## ⚙️ Features
+
+- ⏭️ **Auto-skip** to the next Short when one ends  
+- 📊 **Tracks**:
+  - Total Shorts watched  
+  - Total time spent watching  
+- 🖼️ Clean popup UI with live stats  
+- 🔄 **Reset button** to start fresh  
+- ☁️ Uses **Chrome sync storage** so stats persist across devices  
+- 🧼 No tracking, ads, or shady stuff — just works
+
+---
+
+## 📦 Install Instructions
+
+1. Download or clone this repository
+2. Open `chrome://extensions` in Chrome
+3. Turn on **Developer Mode** (top right)
+4. Click **“Load unpacked”** and select this folder
+5. Open [YouTube Shorts](https://www.youtube.com/shorts) and let AutoShorts do its thing
+
+---
+
+## 💖 Support the Project
+
+If this saved your hands, made your day smoother, or let your dog nap a little longer — consider buying me a coffee:
+
+👉 [**Buy Me a Coffee**](https://coff.ee/jimiwalshz)
+
+No pressure. But support like yours helps me keep building weird, useful, human-centered tools like this.
+
+---
+
+## 🛣️ Roadmap (if I feel like it)
+
+- [ ] Toggle to pause/resume auto-skip  
+- [ ] Optional sounds or alerts  
+- [ ] Better stats visualization  
+- [ ] Keyboard shortcuts  
+- [ ] Experimental: "snore detection" for skip timing (kidding... kinda)
+
+---
+
+## 🧾 License
+
+MIT — do what you want. Just don’t sell it to a data broker and we’re cool.
+
+---
+
+### 🐕 Built with love, dark mode, and a lap full of dogs.
